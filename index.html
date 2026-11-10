@@ -13,10 +13,6 @@
 
   <style>
 
-    /* =========================================================
-       ALMA FARGER
-       ========================================================= */
-
     :root {
       --alma-dark: #06385f;
       --alma-deep: #072d4b;
@@ -30,13 +26,10 @@
       --muted: #627381;
       --border: #d6e2eb;
 
+      --success: #177245;
+
       --shadow: 0 10px 30px rgba(7, 45, 75, 0.10);
     }
-
-
-    /* =========================================================
-       GRUNNOPPSETT
-       ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -49,11 +42,7 @@
     }
 
     body {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--white);
       line-height: 1.6;
@@ -69,9 +58,7 @@
     }
 
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
+    /* HEADER */
 
     header {
       background: var(--white);
@@ -114,12 +101,9 @@
 
     nav a {
       color: var(--alma-deep);
-
       text-decoration: none;
-
       font-size: 15px;
       font-weight: 600;
-
       transition: 0.2s;
     }
 
@@ -140,9 +124,7 @@
     }
 
 
-    /* =========================================================
-       HERO
-       ========================================================= */
+    /* HERO */
 
     .hero {
       background:
@@ -159,7 +141,6 @@
         );
 
       color: var(--white);
-
       padding: 115px 0 120px;
 
       position: relative;
@@ -184,7 +165,6 @@
 
     .hero-content {
       max-width: 800px;
-
       position: relative;
       z-index: 2;
     }
@@ -208,21 +188,14 @@
       font-size: clamp(42px, 7vw, 72px);
 
       line-height: 1.03;
-
       letter-spacing: -2px;
 
       margin-bottom: 24px;
     }
 
-    .hero h1 span {
-      color: var(--white);
-    }
-
     .hero p {
       max-width: 700px;
-
       font-size: 20px;
-
       color: #e8f2f8;
 
       margin-bottom: 35px;
@@ -231,14 +204,11 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-
       gap: 14px;
     }
 
 
-    /* =========================================================
-       BUTTONS
-       ========================================================= */
+    /* BUTTONS */
 
     .button {
       display: inline-block;
@@ -259,14 +229,18 @@
 
       cursor: pointer;
 
-      transition:
-        transform .2s,
-        background .2s;
+      transition: transform .2s, background .2s;
     }
 
     .button:hover {
       background: var(--alma-deep);
       transform: translateY(-1px);
+    }
+
+    .button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
     }
 
     .button-white {
@@ -291,37 +265,28 @@
     }
 
 
-    /* =========================================================
-       INTRO
-       ========================================================= */
+    /* INTRO */
 
     .intro {
       background: var(--white);
-
       padding: 55px 0;
     }
 
     .intro-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 25px;
     }
 
     .intro-item {
       border-left: 3px solid var(--alma-bright);
-
       padding: 5px 20px;
     }
 
     .intro-item strong {
       display: block;
-
       color: var(--alma-blue);
-
       font-size: 20px;
-
       margin-bottom: 5px;
     }
 
@@ -331,15 +296,11 @@
     }
 
 
-    /* =========================================================
-       GENERELLE OVERSKRIFTER
-       ========================================================= */
+    /* OVERSKRIFTER */
 
     .section-title {
       text-align: center;
-
       max-width: 760px;
-
       margin: 0 auto 50px;
     }
 
@@ -349,7 +310,6 @@
       color: var(--alma-blue);
 
       text-transform: uppercase;
-
       letter-spacing: 1.5px;
 
       font-weight: 700;
@@ -370,14 +330,11 @@
 
     .section-title p {
       color: var(--muted);
-
       font-size: 17px;
     }
 
 
-    /* =========================================================
-       TJENESTER
-       ========================================================= */
+    /* TJENESTER */
 
     .services {
       background: var(--alma-soft);
@@ -385,9 +342,7 @@
 
     .service-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 22px;
     }
 
@@ -395,14 +350,12 @@
       background: var(--white);
 
       border: 1px solid var(--border);
-
       border-radius: 10px;
 
       padding: 30px;
-
       min-height: 260px;
 
-      box-shadow: 0 4px 14px rgba(7, 45, 75, 0.03);
+      box-shadow: 0 4px 14px rgba(7,45,75,0.03);
 
       transition:
         transform .2s,
@@ -412,10 +365,12 @@
 
     .service:hover {
       transform: translateY(-4px);
-
       border-color: #a6cbe4;
-
       box-shadow: var(--shadow);
+    }
+
+    .service.primary {
+      border-top: 4px solid var(--alma-blue);
     }
 
     .service-number {
@@ -433,16 +388,15 @@
       width: 45px;
       height: 4px;
 
-      border-radius: 2px;
-
       background: var(--alma-blue);
+
+      border-radius: 2px;
 
       margin-bottom: 20px;
     }
 
     .service h3 {
       color: var(--alma-deep);
-
       font-size: 21px;
 
       margin-bottom: 12px;
@@ -450,18 +404,11 @@
 
     .service p {
       color: var(--muted);
-
       font-size: 15px;
     }
 
-    .service.primary {
-      border-top: 4px solid var(--alma-blue);
-    }
 
-
-    /* =========================================================
-       FRA IDÉ TIL DEL
-       ========================================================= */
+    /* PROSESS */
 
     .process {
       background: var(--white);
@@ -469,15 +416,11 @@
 
     .process-grid {
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 22px;
     }
 
     .process-step {
-      position: relative;
-
       padding: 25px;
     }
 
@@ -501,20 +444,16 @@
 
     .process-step h3 {
       color: var(--alma-deep);
-
       margin-bottom: 8px;
     }
 
     .process-step p {
       color: var(--muted);
-
       font-size: 14px;
     }
 
 
-    /* =========================================================
-       OM ALMA
-       ========================================================= */
+    /* OM ALMA */
 
     .about {
       background:
@@ -550,7 +489,6 @@
 
     .about h2 {
       font-size: 38px;
-
       line-height: 1.15;
 
       margin: 10px 0 22px;
@@ -558,7 +496,6 @@
 
     .about p {
       color: #d8e6ef;
-
       margin-bottom: 18px;
     }
 
@@ -568,7 +505,6 @@
       border: 1px solid rgba(255,255,255,.13);
 
       padding: 35px;
-
       border-radius: 10px;
     }
 
@@ -584,7 +520,6 @@
       position: relative;
 
       padding-left: 25px;
-
       margin-bottom: 13px;
 
       color: #e5eff5;
@@ -597,14 +532,11 @@
       left: 0;
 
       color: #79c5f2;
-
       font-weight: bold;
     }
 
 
-    /* =========================================================
-       KONTAKT
-       ========================================================= */
+    /* KONTAKT */
 
     .contact {
       background: var(--alma-soft);
@@ -623,13 +555,11 @@
       color: var(--white);
 
       padding: 35px;
-
       border-radius: 10px;
     }
 
     .contact-info h3 {
       font-size: 24px;
-
       margin-bottom: 25px;
     }
 
@@ -659,9 +589,7 @@
     }
 
 
-    /* =========================================================
-       FANEVELGER
-       ========================================================= */
+    /* TJENESTEVELGER */
 
     .request-label {
       font-weight: 700;
@@ -709,9 +637,7 @@
     }
 
 
-    /* =========================================================
-       SKJEMA
-       ========================================================= */
+    /* SKJEMA */
 
     form {
       background: var(--white);
@@ -762,10 +688,6 @@
       background: var(--white);
 
       font: inherit;
-
-      transition:
-        border-color .2s,
-        box-shadow .2s;
     }
 
     input:focus,
@@ -780,16 +702,7 @@
 
     textarea {
       min-height: 150px;
-
       resize: vertical;
-    }
-
-    .helper-text {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      margin-top: 6px;
     }
 
     .selected-service {
@@ -810,10 +723,57 @@
       color: var(--alma-blue);
     }
 
+    .file-info {
+      background: #f7fafc;
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
+      border-left: 3px solid var(--alma-blue);
+
+      padding: 13px 15px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
+    }
+
+    .file-info a {
+      color: var(--alma-blue);
+      font-weight: 600;
+    }
+
+    .form-status {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 14px;
+
+      border-radius: 5px;
+
+      font-size: 14px;
+    }
+
+    .form-status.success {
+      display: block;
+
+      background: #e9f7ef;
+      color: #17663d;
+
+      border: 1px solid #b9dfca;
+    }
+
+    .form-status.error {
+      display: block;
+
+      background: #fff2f2;
+      color: #9a2929;
+
+      border: 1px solid #edc5c5;
+    }
+
+
+    /* FOOTER */
 
     footer {
       background: #041f34;
@@ -836,9 +796,7 @@
     }
 
 
-    /* =========================================================
-       MOBIL
-       ========================================================= */
+    /* MOBIL */
 
     @media (max-width: 900px) {
 
@@ -886,7 +844,6 @@
 
       .nav-contact {
         padding: 8px 11px;
-
         font-size: 13px;
       }
 
@@ -911,7 +868,6 @@
 
       .tabs {
         display: grid;
-
         grid-template-columns: 1fr 1fr;
       }
 
@@ -928,10 +884,6 @@
         display: block;
       }
 
-      .footer-inner > div:first-child {
-        margin-bottom: 8px;
-      }
-
     }
 
   </style>
@@ -941,20 +893,11 @@
 <body>
 
 
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
-
 <header>
 
   <div class="container header-inner">
 
     <a class="logo" href="#top">
-
-      <!--
-        Logoen skal ligge i samme mappe som index.html
-        og hete alma-logo.png
-      -->
 
       <img
         src="alma-logo.png"
@@ -965,9 +908,18 @@
 
 
     <nav>
-      <a href="#tjenester">Tjenester</a>
-      <a href="#slik-fungerer-det">Slik fungerer det</a>
-      <a href="#om">Om Alma</a>
+
+      <a href="#tjenester">
+        Tjenester
+      </a>
+
+      <a href="#slik-fungerer-det">
+        Slik fungerer det
+      </a>
+
+      <a href="#om">
+        Om Alma
+      </a>
 
       <a
         href="#kontakt"
@@ -975,6 +927,7 @@
       >
         Kontakt
       </a>
+
     </nav>
 
   </div>
@@ -985,9 +938,7 @@
 <main id="top">
 
 
-<!-- =========================================================
-     HERO
-     ========================================================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -1001,7 +952,7 @@
 
       <h1>
         Har du en idé?<br>
-        <span>La oss lage den.</span>
+        La oss lage den.
       </h1>
 
       <p>
@@ -1035,36 +986,51 @@
 </section>
 
 
-<!-- =========================================================
-     KORT INTRO
-     ========================================================= -->
+<!-- INTRO -->
 
 <section class="intro">
 
   <div class="container intro-grid">
 
     <div class="intro-item">
-      <strong>Fra idé til del</strong>
+
+      <strong>
+        Fra idé til del
+      </strong>
+
       <span>
         Vi kan ta utgangspunkt i en skisse,
         tegning eller eksisterende komponent.
       </span>
+
     </div>
 
+
     <div class="intro-item">
-      <strong>Én del eller liten serie</strong>
+
+      <strong>
+        Én del eller liten serie
+      </strong>
+
       <span>
         Egnet for prototyper, reservedeler
         og mindre produksjonsserier.
       </span>
+
     </div>
 
+
     <div class="intro-item">
-      <strong>Lokalt i Rana</strong>
+
+      <strong>
+        Lokalt i Rana
+      </strong>
+
       <span>
         Fleksibel hjelp til privatpersoner,
         bedrifter og tekniske prosjekter.
       </span>
+
     </div>
 
   </div>
@@ -1072,9 +1038,7 @@
 </section>
 
 
-<!-- =========================================================
-     TJENESTER
-     ========================================================= -->
+<!-- TJENESTER -->
 
 <section
   class="services"
@@ -1096,7 +1060,6 @@
       <p>
         Fra funksjonelle reservedeler og prototyper
         til produktmerking og spesialtilpassede løsninger.
-        Beskriv hva du trenger, så ser vi på mulighetene.
       </p>
 
     </div>
@@ -1104,8 +1067,6 @@
 
     <div class="service-grid">
 
-
-      <!-- 3D PRINT -->
 
       <article class="service primary">
 
@@ -1129,8 +1090,6 @@
       </article>
 
 
-      <!-- LASER -->
-
       <article class="service primary">
 
         <div class="service-number">
@@ -1151,8 +1110,6 @@
 
       </article>
 
-
-      <!-- UV PRINT -->
 
       <article class="service primary">
 
@@ -1176,8 +1133,6 @@
       </article>
 
 
-      <!-- PRODUKTUTVIKLING -->
-
       <article class="service">
 
         <div class="service-number">
@@ -1191,15 +1146,13 @@
         </h3>
 
         <p>
-          Har du en idé, men mangler en ferdig løsning?
-          Alma kan bistå med utvikling fra konsept
-          og prototype til fysisk produkt.
+          Har du en idé, men mangler ferdig løsning?
+          Alma kan bistå fra konsept og prototype
+          til fysisk produkt.
         </p>
 
       </article>
 
-
-      <!-- TEKNISK TEGNING -->
 
       <article class="service">
 
@@ -1214,15 +1167,13 @@
         </h3>
 
         <p>
-          Modellering av enkle komponenter,
+          Modellering av komponenter,
           tilpasning av eksisterende design
           og produksjonsgrunnlag for 3D-print.
         </p>
 
       </article>
 
-
-      <!-- UTLEIE -->
 
       <article class="service">
 
@@ -1237,10 +1188,9 @@
         </h3>
 
         <p>
-          Trenger du verktøy eller utstyr
-          til et prosjekt? Ta kontakt for
-          informasjon om hva som er tilgjengelig
-          for utleie.
+          Trenger du verktøy eller utstyr til et
+          prosjekt? Ta kontakt for informasjon om
+          hva som er tilgjengelig for utleie.
         </p>
 
       </article>
@@ -1252,9 +1202,7 @@
 </section>
 
 
-<!-- =========================================================
-     SLIK FUNGERER DET
-     ========================================================= -->
+<!-- PROSESS -->
 
 <section
   class="process"
@@ -1283,6 +1231,7 @@
 
 
     <div class="process-grid">
+
 
       <div class="process-step">
 
@@ -1313,8 +1262,8 @@
         </h3>
 
         <p>
-          Legg ved bilder, mål, skisse,
-          PDF eller eksisterende 3D-fil.
+          Bilder, mål, skisse eller eksisterende
+          3D-fil kan sendes på e-post ved behov.
         </p>
 
       </div>
@@ -1332,7 +1281,7 @@
 
         <p>
           Vi ser på produksjonsmetode,
-          materiale og eventuelle tilpasninger.
+          materiale og nødvendige tilpasninger.
         </p>
 
       </div>
@@ -1362,9 +1311,7 @@
 </section>
 
 
-<!-- =========================================================
-     OM ALMA
-     ========================================================= -->
+<!-- OM ALMA -->
 
 <section
   class="about"
@@ -1392,8 +1339,6 @@
       </p>
 
       <p>
-        Målet er å gjøre veien fra idé eller
-        problem til fysisk løsning kortere.
         Oppdrag kan være alt fra én enkelt
         reservedel til prototyper, merking
         eller mindre produksjonsserier.
@@ -1464,9 +1409,7 @@
 </section>
 
 
-<!-- =========================================================
-     KONTAKT
-     ========================================================= -->
+<!-- KONTAKT -->
 
 <section
   class="contact"
@@ -1487,9 +1430,8 @@
       </h2>
 
       <p>
-        Send en kort beskrivelse av oppdraget.
-        Bilder, mål, tegninger eller 3D-filer
-        gjør det enklere å vurdere løsningen.
+        Send en kort beskrivelse av oppdraget,
+        så tar jeg kontakt for videre avklaring.
       </p>
 
     </div>
@@ -1567,8 +1509,6 @@
         </div>
 
 
-        <!-- FANEVELGER -->
-
         <div
           class="tabs"
           role="tablist"
@@ -1622,15 +1562,29 @@
         </div>
 
 
-        <!-- SKJEMA -->
+        <!--
+          FORMET SENDES TIL FORMSPREE
+        -->
 
-        <form id="contactForm">
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/xjywbyrd"
+          method="POST"
+        >
+
 
           <input
             type="hidden"
             id="service"
-            name="service"
+            name="Tjeneste"
             value="3D-print"
+          >
+
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Ny forespørsel til Alma Produksjon og Utleie"
           >
 
 
@@ -1653,8 +1607,9 @@
 
               <input
                 id="name"
-                name="name"
+                name="Navn"
                 type="text"
+                autocomplete="name"
                 required
               >
 
@@ -1669,8 +1624,9 @@
 
               <input
                 id="company"
-                name="company"
+                name="Bedrift"
                 type="text"
+                autocomplete="organization"
               >
 
             </div>
@@ -1690,6 +1646,7 @@
                 id="email"
                 name="email"
                 type="email"
+                autocomplete="email"
                 required
               >
 
@@ -1704,8 +1661,9 @@
 
               <input
                 id="phone"
-                name="phone"
+                name="Telefon"
                 type="tel"
+                autocomplete="tel"
               >
 
             </div>
@@ -1721,7 +1679,7 @@
 
             <textarea
               id="message"
-              name="message"
+              name="Beskrivelse"
               required
               placeholder="Eksempel: Jeg har en plastdel som har gått i stykker og ønsker å få laget en ny. Jeg har originaldelen og kan sende bilder og mål."
             ></textarea>
@@ -1729,34 +1687,41 @@
           </div>
 
 
-          <div class="form-group">
+          <div class="file-info">
 
-            <label for="attachment">
-              Bilder / tegninger / 3D-filer
-            </label>
+            <strong>
+              Har du bilder, tegninger eller 3D-filer?
+            </strong>
 
-            <input
-              id="attachment"
-              name="attachment"
-              type="file"
-              multiple
-              accept=".jpg,.jpeg,.png,.pdf,.stl,.step,.stp,.3mf,.dxf"
-            >
+            <br>
 
-            <div class="helper-text">
-              Legg gjerne ved bilder, PDF, STL,
-              STEP, STP, 3MF eller DXF.
-            </div>
+            Send gjerne JPG, PDF, STL, STEP, 3MF
+            eller DXF på e-post til
+
+            <a href="mailto:daniel.nystad@gmail.com">
+              daniel.nystad@gmail.com
+            </a>
+
+            etter at forespørselen er sendt.
 
           </div>
 
 
           <button
             class="button"
+            id="submitButton"
             type="submit"
           >
             Send forespørsel
           </button>
+
+
+          <div
+            id="formStatus"
+            class="form-status"
+            aria-live="polite"
+          ></div>
+
 
         </form>
 
@@ -1772,18 +1737,16 @@
 </main>
 
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
 <footer>
 
   <div class="container footer-inner">
 
     <div>
+
       <strong>
         Alma Produksjon og Utleie V/ Nystad
       </strong>
+
     </div>
 
     <div>
@@ -1795,17 +1758,12 @@
 </footer>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
 <script>
 
-  /*
-    ---------------------------------------------------------
-    TJENESTEVELGER
-    ---------------------------------------------------------
-  */
+
+  /* =========================================================
+     TJENESTEVELGER
+     ========================================================= */
 
   const tabs =
     document.querySelectorAll(".tab");
@@ -1843,31 +1801,135 @@
   });
 
 
-  /*
-    ---------------------------------------------------------
-    KONTAKTSKJEMA
 
-    GitHub Pages kan ikke sende dette skjemaet direkte.
+  /* =========================================================
+     FORMSPREE AJAX-INNSENDING
+     ========================================================= */
 
-    Skjemaet må senere kobles mot en skjematjeneste,
-    e-posttjeneste eller annen backend.
-    ---------------------------------------------------------
-  */
+  const form =
+    document.getElementById("contactForm");
 
-  document
-    .getElementById("contactForm")
-    .addEventListener(
-      "submit",
-      function(event) {
+  const formStatus =
+    document.getElementById("formStatus");
 
-        event.preventDefault();
+  const submitButton =
+    document.getElementById("submitButton");
 
-        alert(
-          "Kontaktskjemaet er klart, men må kobles til en skjematjeneste før det kan sende forespørsler."
-        );
+
+  form.addEventListener(
+    "submit",
+    async function(event) {
+
+      event.preventDefault();
+
+
+      formStatus.className =
+        "form-status";
+
+      formStatus.textContent =
+        "";
+
+
+      submitButton.disabled =
+        true;
+
+      submitButton.textContent =
+        "Sender...";
+
+
+      try {
+
+        const data =
+          new FormData(form);
+
+
+        const response =
+          await fetch(
+            form.action,
+            {
+              method: form.method,
+              body: data,
+              headers: {
+                "Accept": "application/json"
+              }
+            }
+          );
+
+
+        if (response.ok) {
+
+          formStatus.className =
+            "form-status success";
+
+          formStatus.textContent =
+            "Takk! Forespørselen er sendt. Jeg tar kontakt så snart som mulig.";
+
+
+          /*
+             Nullstill skjemaet
+          */
+
+          form.reset();
+
+
+          /*
+             Sett tjenesten tilbake til 3D-print
+          */
+
+          serviceInput.value =
+            "3D-print";
+
+          selectedService.innerHTML =
+            "Forespørselen gjelder: <strong>3D-print</strong>";
+
+
+          tabs.forEach(item => {
+
+            item.classList.remove("active");
+
+            if (
+              item.dataset.service ===
+              "3D-print"
+            ) {
+              item.classList.add("active");
+            }
+
+          });
+
+        }
+
+        else {
+
+          formStatus.className =
+            "form-status error";
+
+          formStatus.textContent =
+            "Forespørselen kunne ikke sendes. Prøv igjen, eller send e-post til daniel.nystad@gmail.com.";
+
+        }
 
       }
-    );
+
+      catch (error) {
+
+        formStatus.className =
+          "form-status error";
+
+        formStatus.textContent =
+          "Forespørselen kunne ikke sendes. Kontroller internettforbindelsen eller send e-post til daniel.nystad@gmail.com.";
+
+      }
+
+
+      submitButton.disabled =
+        false;
+
+      submitButton.textContent =
+        "Send forespørsel";
+
+    }
+  );
+
 
 </script>
 
