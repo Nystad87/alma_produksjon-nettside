@@ -6,21 +6,37 @@
 
   <title>Alma Produksjon og Utleie | 3D-print, laser og UV-print</title>
 
-  <meta name="description"
-        content="Alma Produksjon og Utleie tilbyr 3D-printing, lasergravering, UV-print, produktutvikling, teknisk tegning og utleie av verktøy og utstyr.">
+  <meta
+    name="description"
+    content="Alma Produksjon og Utleie i Rana tilbyr 3D-printing, lasergravering, laserkutting, UV-print, produktutvikling og teknisk tegning."
+  >
 
   <style>
+
+    /* =========================================================
+       ALMA FARGER
+       ========================================================= */
+
     :root {
-      --dark: #17212b;
-      --dark-2: #101820;
-      --orange: #e57a2a;
-      --orange-hover: #c9651e;
-      --light: #f5f6f7;
+      --alma-dark: #06385f;
+      --alma-deep: #072d4b;
+      --alma-blue: #075493;
+      --alma-bright: #0869ae;
+      --alma-light: #eaf4fb;
+      --alma-soft: #f5f9fc;
+
       --white: #ffffff;
-      --text: #252b31;
-      --muted: #66707a;
-      --border: #d9dde1;
+      --text: #17242e;
+      --muted: #627381;
+      --border: #d6e2eb;
+
+      --shadow: 0 10px 30px rgba(7, 45, 75, 0.10);
     }
+
+
+    /* =========================================================
+       GRUNNOPPSETT
+       ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -28,273 +44,692 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       color: var(--text);
       background: var(--white);
       line-height: 1.6;
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1160px, 92%);
       margin: auto;
     }
 
-    /* HEADER */
+    section {
+      padding: 85px 0;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
     header {
-      background: var(--dark-2);
-      color: white;
-      padding: 18px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow: 0 2px 12px rgba(7, 45, 75, 0.05);
     }
 
     .header-inner {
+      min-height: 90px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+
+      gap: 30px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 15px;
     }
 
     .logo img {
-      max-height: 65px;
-      max-width: 220px;
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .logo-placeholder {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
 
     nav a {
-      color: white;
+      color: var(--alma-deep);
+
       text-decoration: none;
-      margin-left: 25px;
+
       font-size: 15px;
+      font-weight: 600;
+
+      transition: 0.2s;
     }
 
     nav a:hover {
-      color: var(--orange);
+      color: var(--alma-bright);
     }
 
-    /* HERO */
+    .nav-contact {
+      background: var(--alma-blue);
+      color: var(--white) !important;
+
+      padding: 10px 18px;
+      border-radius: 5px;
+    }
+
+    .nav-contact:hover {
+      background: var(--alma-deep);
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero {
       background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(255,255,255,0.12),
+          transparent 30%
+        ),
         linear-gradient(
-          90deg,
-          rgba(16,24,32,.96),
-          rgba(23,33,43,.88)
+          135deg,
+          var(--alma-deep) 0%,
+          var(--alma-blue) 55%,
+          var(--alma-bright) 100%
         );
-      color: white;
-      padding: 95px 0;
+
+      color: var(--white);
+
+      padding: 115px 0 120px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      right: -120px;
+      bottom: -220px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.05);
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 800px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      color: #d7ecfb;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.05;
-      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 72px);
+
+      line-height: 1.03;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 24px;
     }
 
     .hero h1 span {
-      color: var(--orange);
+      color: var(--white);
     }
 
     .hero p {
-      max-width: 680px;
+      max-width: 700px;
+
       font-size: 20px;
-      color: #e4e8eb;
+
+      color: #e8f2f8;
+
       margin-bottom: 35px;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
     .button {
       display: inline-block;
-      background: var(--orange);
-      color: white;
-      text-decoration: none;
-      padding: 14px 25px;
-      border-radius: 5px;
-      font-weight: bold;
+
       border: none;
+
+      background: var(--alma-bright);
+      color: var(--white);
+
+      text-decoration: none;
+
+      padding: 14px 24px;
+
+      border-radius: 5px;
+
+      font-size: 15px;
+      font-weight: 700;
+
       cursor: pointer;
-      font-size: 16px;
+
+      transition:
+        transform .2s,
+        background .2s;
     }
 
     .button:hover {
-      background: var(--orange-hover);
+      background: var(--alma-deep);
+      transform: translateY(-1px);
     }
 
-    /* SECTIONS */
-
-    section {
-      padding: 80px 0;
+    .button-white {
+      background: var(--white);
+      color: var(--alma-blue);
     }
+
+    .button-white:hover {
+      background: var(--alma-light);
+      color: var(--alma-deep);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--white);
+
+      border: 1px solid rgba(255,255,255,.55);
+    }
+
+    .button-outline:hover {
+      background: rgba(255,255,255,.10);
+    }
+
+
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
+    .intro {
+      background: var(--white);
+
+      padding: 55px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .intro-item {
+      border-left: 3px solid var(--alma-bright);
+
+      padding: 5px 20px;
+    }
+
+    .intro-item strong {
+      display: block;
+
+      color: var(--alma-blue);
+
+      font-size: 20px;
+
+      margin-bottom: 5px;
+    }
+
+    .intro-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       GENERELLE OVERSKRIFTER
+       ========================================================= */
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+
+      max-width: 760px;
+
+      margin: 0 auto 50px;
+    }
+
+    .section-title .small-title {
+      display: block;
+
+      color: var(--alma-blue);
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      font-weight: 700;
+      font-size: 13px;
+
+      margin-bottom: 10px;
     }
 
     .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      color: var(--alma-deep);
+
+      font-size: clamp(30px, 5vw, 42px);
+
+      line-height: 1.15;
+
+      margin-bottom: 14px;
     }
 
     .section-title p {
       color: var(--muted);
-      max-width: 680px;
-      margin: auto;
+
+      font-size: 17px;
     }
 
-    /* SERVICES */
+
+    /* =========================================================
+       TJENESTER
+       ========================================================= */
 
     .services {
-      background: var(--light);
+      background: var(--alma-soft);
     }
 
     .service-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 22px;
     }
 
     .service {
-      background: white;
+      background: var(--white);
+
       border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 8px;
+
+      border-radius: 10px;
+
+      padding: 30px;
+
+      min-height: 260px;
+
+      box-shadow: 0 4px 14px rgba(7, 45, 75, 0.03);
+
+      transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s;
     }
 
-    .service-icon {
+    .service:hover {
+      transform: translateY(-4px);
+
+      border-color: #a6cbe4;
+
+      box-shadow: var(--shadow);
+    }
+
+    .service-number {
+      color: var(--alma-bright);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 16px;
+    }
+
+    .service-line {
       width: 45px;
       height: 4px;
-      background: var(--orange);
+
+      border-radius: 2px;
+
+      background: var(--alma-blue);
+
       margin-bottom: 20px;
     }
 
     .service h3 {
-      margin-bottom: 10px;
+      color: var(--alma-deep);
+
       font-size: 21px;
+
+      margin-bottom: 12px;
     }
 
     .service p {
       color: var(--muted);
+
       font-size: 15px;
     }
 
-    /* ABOUT */
+    .service.primary {
+      border-top: 4px solid var(--alma-blue);
+    }
+
+
+    /* =========================================================
+       FRA IDÉ TIL DEL
+       ========================================================= */
+
+    .process {
+      background: var(--white);
+    }
+
+    .process-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 22px;
+    }
+
+    .process-step {
+      position: relative;
+
+      padding: 25px;
+    }
+
+    .process-step .number {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--alma-light);
+      color: var(--alma-blue);
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    .process-step h3 {
+      color: var(--alma-deep);
+
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       OM ALMA
+       ========================================================= */
+
+    .about {
+      background:
+        linear-gradient(
+          135deg,
+          var(--alma-deep),
+          var(--alma-dark)
+        );
+
+      color: var(--white);
+    }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+
+      grid-template-columns: 1.1fr .9fr;
+
+      gap: 65px;
+
       align-items: center;
     }
 
+    .about-label {
+      color: #8fc8eb;
+
+      text-transform: uppercase;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+    }
+
     .about h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 38px;
+
+      line-height: 1.15;
+
+      margin: 10px 0 22px;
     }
 
     .about p {
+      color: #d8e6ef;
+
       margin-bottom: 18px;
     }
 
     .about-box {
-      background: var(--dark);
-      color: white;
-      padding: 40px;
-      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+
+      border: 1px solid rgba(255,255,255,.13);
+
+      padding: 35px;
+
+      border-radius: 10px;
     }
 
     .about-box h3 {
-      color: var(--orange);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .about-box ul {
-      padding-left: 20px;
+      list-style: none;
     }
 
     .about-box li {
-      margin-bottom: 9px;
+      position: relative;
+
+      padding-left: 25px;
+
+      margin-bottom: 13px;
+
+      color: #e5eff5;
     }
 
-    /* CONTACT */
+    .about-box li::before {
+      content: "✓";
+
+      position: absolute;
+      left: 0;
+
+      color: #79c5f2;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================================================
+       KONTAKT
+       ========================================================= */
 
     .contact {
-      background: var(--dark);
-      color: white;
-    }
-
-    .contact .section-title p {
-      color: #cad0d5;
+      background: var(--alma-soft);
     }
 
     .contact-layout {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 50px;
+
+      grid-template-columns: .75fr 1.5fr;
+
+      gap: 45px;
+    }
+
+    .contact-info {
+      background: var(--alma-deep);
+      color: var(--white);
+
+      padding: 35px;
+
+      border-radius: 10px;
     }
 
     .contact-info h3 {
-      color: var(--orange);
-      margin-bottom: 20px;
+      font-size: 24px;
+
+      margin-bottom: 25px;
     }
 
-    .contact-info p {
-      margin-bottom: 15px;
+    .contact-info .detail {
+      margin-bottom: 22px;
+    }
+
+    .contact-info small {
+      display: block;
+
+      color: #8fc8eb;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 4px;
     }
 
     .contact-info a {
-      color: white;
+      color: var(--white);
+      text-decoration: none;
     }
 
-    /* TABS */
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       FANEVELGER
+       ========================================================= */
+
+    .request-label {
+      font-weight: 700;
+
+      color: var(--alma-deep);
+
+      margin-bottom: 12px;
+    }
 
     .tabs {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-bottom: 25px;
     }
 
     .tab {
+      background: var(--white);
+      color: var(--alma-blue);
+
+      border: 1px solid #b9d4e6;
+
       padding: 10px 14px;
-      background: #283640;
-      color: white;
-      border: 1px solid #3b4953;
+
+      border-radius: 5px;
+
+      font-weight: 600;
+
       cursor: pointer;
-      border-radius: 4px;
+
+      transition: .2s;
+    }
+
+    .tab:hover {
+      background: var(--alma-light);
     }
 
     .tab.active {
-      background: var(--orange);
-      border-color: var(--orange);
+      background: var(--alma-blue);
+      color: var(--white);
+
+      border-color: var(--alma-blue);
     }
 
-    /* FORM */
+
+    /* =========================================================
+       SKJEMA
+       ========================================================= */
 
     form {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      color: var(--text);
+      background: var(--white);
+
+      padding: 32px;
+
+      border-radius: 10px;
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
     }
 
     .form-row {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 18px;
     }
 
@@ -304,43 +739,115 @@
 
     label {
       display: block;
-      font-weight: bold;
+
+      color: var(--alma-deep);
+
+      font-weight: 700;
+
       margin-bottom: 7px;
     }
 
     input,
     textarea {
       width: 100%;
-      padding: 12px;
+
+      padding: 12px 13px;
+
       border: 1px solid var(--border);
-      border-radius: 4px;
+
+      border-radius: 5px;
+
+      color: var(--text);
+
+      background: var(--white);
+
       font: inherit;
+
+      transition:
+        border-color .2s,
+        box-shadow .2s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+
+      border-color: var(--alma-bright);
+
+      box-shadow:
+        0 0 0 3px rgba(8,105,174,.12);
     }
 
     textarea {
-      min-height: 140px;
+      min-height: 150px;
+
       resize: vertical;
     }
 
     .helper-text {
       color: var(--muted);
+
       font-size: 13px;
+
       margin-top: 6px;
     }
 
-    /* FOOTER */
+    .selected-service {
+      background: var(--alma-light);
 
-    footer {
-      background: #0b1116;
-      color: #aeb7bd;
-      text-align: center;
-      padding: 25px;
+      color: var(--alma-deep);
+
+      padding: 10px 13px;
+
+      border-radius: 5px;
+
+      margin-bottom: 20px;
+
       font-size: 14px;
     }
 
-    @media (max-width: 850px) {
+    .selected-service strong {
+      color: var(--alma-blue);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: #041f34;
+      color: #afc6d6;
+
+      padding: 32px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+
+
+    /* =========================================================
+       MOBIL
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
       .service-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid,
@@ -348,69 +855,149 @@
         grid-template-columns: 1fr;
       }
 
-      nav {
+      nav a:not(.nav-contact) {
         display: none;
       }
+
+      .logo img {
+        width: 240px;
+      }
+
     }
 
-    @media (max-width: 550px) {
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 65px 0;
+      }
+
+      .header-inner {
+        min-height: 75px;
+      }
+
+      .logo {
+        max-width: 68%;
+      }
+
+      .logo img {
+        width: 220px;
+      }
+
+      .nav-contact {
+        padding: 8px 11px;
+
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .intro-grid,
       .service-grid,
+      .process-grid,
       .form-row {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding: 70px 0;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
       .tabs {
         display: grid;
+
         grid-template-columns: 1fr 1fr;
       }
+
+      .tab {
+        width: 100%;
+      }
+
+      form,
+      .contact-info {
+        padding: 24px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-inner > div:first-child {
+        margin-bottom: 8px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
 <header>
+
   <div class="container header-inner">
 
-    <div class="logo">
+    <a class="logo" href="#top">
 
-      <!-- Bytt alma-logo.png med faktisk logofil -->
+      <!--
+        Logoen skal ligge i samme mappe som index.html
+        og hete alma-logo.png
+      -->
+
       <img
         src="alma-logo.png"
         alt="Alma Produksjon og Utleie"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
       >
 
-      <div class="logo-placeholder" style="display:none;">
-        ALMA
-      </div>
+    </a>
 
-    </div>
 
     <nav>
       <a href="#tjenester">Tjenester</a>
+      <a href="#slik-fungerer-det">Slik fungerer det</a>
       <a href="#om">Om Alma</a>
-      <a href="#kontakt">Kontakt</a>
+
+      <a
+        href="#kontakt"
+        class="nav-contact"
+      >
+        Kontakt
+      </a>
     </nav>
 
   </div>
+
 </header>
 
 
-<main>
+<main id="top">
 
-  <!-- HERO -->
 
-  <section class="hero">
-    <div class="container hero-content">
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        Produksjon • Prototyper • Spesialløsninger
+      </span>
 
       <h1>
         Har du en idé?<br>
@@ -418,372 +1005,838 @@
       </h1>
 
       <p>
-        Alma Produksjon og Utleie hjelper privatpersoner og bedrifter
-        med prototyper, spesialtilpassede deler, merking,
-        produktutvikling og mindre produksjonsserier.
+        Alma hjelper privatpersoner og bedrifter med
+        3D-printing, lasergravering, UV-print og
+        utvikling av spesialtilpassede deler og produkter.
       </p>
 
-      <a class="button" href="#kontakt">
-        Send en forespørsel
-      </a>
+      <div class="hero-actions">
 
-    </div>
-  </section>
+        <a
+          class="button button-white"
+          href="#kontakt"
+        >
+          Send forespørsel
+        </a>
 
-
-  <!-- SERVICES -->
-
-  <section class="services" id="tjenester">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Hva kan jeg hjelpe deg med?</h2>
-        <p>
-          Fra en enkel idé eller ødelagt del til ferdig produkt.
-          Ta kontakt, så ser vi på hva som er mulig.
-        </p>
-      </div>
-
-      <div class="service-grid">
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>3D-print</h3>
-          <p>
-            Funksjonelle deler, prototyper, reservedeler,
-            spesialtilpassede komponenter og småserieproduksjon
-            i materialer tilpasset bruksområdet.
-          </p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>Laser og gravering</h3>
-          <p>
-            Gravering, merking og skjæring av egnede materialer.
-            Egnet for blant annet skilt, logoer, produktmerking
-            og spesialtilpassede produkter.
-          </p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>UV-print</h3>
-          <p>
-            Direkte fullfargeprint på en rekke materialer som
-            plast, metall, glass, akryl og tre.
-            Mulighet for hvitt blekk, gloss og struktur.
-          </p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>Produktutvikling</h3>
-          <p>
-            Har du en idé, men mangler et ferdig produkt?
-            Jeg kan bistå fra konsept og prototype til
-            produksjonsklar løsning.
-          </p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>Teknisk tegning</h3>
-          <p>
-            Oppmåling, 3D-modellering og teknisk tegning av
-            enkle komponenter og løsninger for produksjon
-            eller videreutvikling.
-          </p>
-        </div>
-
-        <div class="service">
-          <div class="service-icon"></div>
-          <h3>Utleie</h3>
-          <p>
-            Behov for verktøy eller utstyr til et prosjekt?
-            Ta kontakt og hør hva som er tilgjengelig for utleie.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="about" id="om">
-
-    <div class="container about-grid">
-
-      <div>
-
-        <h2>Praktiske løsninger på små og store idéer</h2>
-
-        <p>
-          Alma Produksjon og Utleie holder til i Rana og tilbyr
-          fleksibel produksjon for både privatpersoner og bedrifter.
-        </p>
-
-        <p>
-          Målet er ikke å masseprodusere standardprodukter,
-          men å finne gode løsninger når du trenger noe
-          spesielt, enten det er én enkelt del,
-          en prototype eller en mindre serie.
-        </p>
-
-        <a class="button" href="#kontakt">
-          Fortell hva du trenger
+        <a
+          class="button button-outline"
+          href="#tjenester"
+        >
+          Se tjenester
         </a>
 
       </div>
 
-      <div class="about-box">
+    </div>
 
-        <h3>Eksempler på oppdrag</h3>
+  </div>
 
-        <ul>
-          <li>Reservedeler som ikke lenger kan kjøpes</li>
-          <li>Prototyper og testdeler</li>
-          <li>Småserieproduksjon</li>
-          <li>Tilpassede braketter, holdere og kapslinger</li>
-          <li>Logo og produktmerking</li>
-          <li>Skilt og merkeskilt</li>
-          <li>Fullfarge UV-print</li>
-          <li>Oppmåling og redesign av eksisterende deler</li>
-        </ul>
+</section>
+
+
+<!-- =========================================================
+     KORT INTRO
+     ========================================================= -->
+
+<section class="intro">
+
+  <div class="container intro-grid">
+
+    <div class="intro-item">
+      <strong>Fra idé til del</strong>
+      <span>
+        Vi kan ta utgangspunkt i en skisse,
+        tegning eller eksisterende komponent.
+      </span>
+    </div>
+
+    <div class="intro-item">
+      <strong>Én del eller liten serie</strong>
+      <span>
+        Egnet for prototyper, reservedeler
+        og mindre produksjonsserier.
+      </span>
+    </div>
+
+    <div class="intro-item">
+      <strong>Lokalt i Rana</strong>
+      <span>
+        Fleksibel hjelp til privatpersoner,
+        bedrifter og tekniske prosjekter.
+      </span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TJENESTER
+     ========================================================= -->
+
+<section
+  class="services"
+  id="tjenester"
+>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="small-title">
+        Tjenester
+      </span>
+
+      <h2>
+        Hva kan Alma hjelpe deg med?
+      </h2>
+
+      <p>
+        Fra funksjonelle reservedeler og prototyper
+        til produktmerking og spesialtilpassede løsninger.
+        Beskriv hva du trenger, så ser vi på mulighetene.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <!-- 3D PRINT -->
+
+      <article class="service primary">
+
+        <div class="service-number">
+          01
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          3D-print
+        </h3>
+
+        <p>
+          Funksjonelle deler, prototyper,
+          reservedeler og småserieproduksjon.
+          Materiale og printmetode tilpasses
+          bruksområde og krav.
+        </p>
+
+      </article>
+
+
+      <!-- LASER -->
+
+      <article class="service primary">
+
+        <div class="service-number">
+          02
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          Lasergravering og merking
+        </h3>
+
+        <p>
+          Presis gravering, produktmerking,
+          logoer, skilt og identifikasjon
+          på egnede materialer.
+        </p>
+
+      </article>
+
+
+      <!-- UV PRINT -->
+
+      <article class="service primary">
+
+        <div class="service-number">
+          03
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          UV-print
+        </h3>
+
+        <p>
+          Fullfarge direkteprint på blant annet
+          plast, metall, glass, tre og akryl.
+          Egnet for produktmerking, logoer,
+          prototyper og småserier.
+        </p>
+
+      </article>
+
+
+      <!-- PRODUKTUTVIKLING -->
+
+      <article class="service">
+
+        <div class="service-number">
+          04
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          Produktutvikling
+        </h3>
+
+        <p>
+          Har du en idé, men mangler en ferdig løsning?
+          Alma kan bistå med utvikling fra konsept
+          og prototype til fysisk produkt.
+        </p>
+
+      </article>
+
+
+      <!-- TEKNISK TEGNING -->
+
+      <article class="service">
+
+        <div class="service-number">
+          05
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          Teknisk tegning og 3D-modellering
+        </h3>
+
+        <p>
+          Modellering av enkle komponenter,
+          tilpasning av eksisterende design
+          og produksjonsgrunnlag for 3D-print.
+        </p>
+
+      </article>
+
+
+      <!-- UTLEIE -->
+
+      <article class="service">
+
+        <div class="service-number">
+          06
+        </div>
+
+        <div class="service-line"></div>
+
+        <h3>
+          Verktøy og utstyr
+        </h3>
+
+        <p>
+          Trenger du verktøy eller utstyr
+          til et prosjekt? Ta kontakt for
+          informasjon om hva som er tilgjengelig
+          for utleie.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIK FUNGERER DET
+     ========================================================= -->
+
+<section
+  class="process"
+  id="slik-fungerer-det"
+>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <span class="small-title">
+        Enkelt å komme i gang
+      </span>
+
+      <h2>
+        Fra problem til ferdig løsning
+      </h2>
+
+      <p>
+        Du trenger ikke ha en ferdig tegning.
+        Et bilde, noen mål eller en eksisterende
+        del kan være nok til å starte.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="process-step">
+
+        <div class="number">
+          1
+        </div>
+
+        <h3>
+          Send forespørsel
+        </h3>
+
+        <p>
+          Beskriv hva du trenger og hvordan
+          produktet skal brukes.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="number">
+          2
+        </div>
+
+        <h3>
+          Send grunnlaget
+        </h3>
+
+        <p>
+          Legg ved bilder, mål, skisse,
+          PDF eller eksisterende 3D-fil.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="number">
+          3
+        </div>
+
+        <h3>
+          Løsningen vurderes
+        </h3>
+
+        <p>
+          Vi ser på produksjonsmetode,
+          materiale og eventuelle tilpasninger.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="number">
+          4
+        </div>
+
+        <h3>
+          Produksjon
+        </h3>
+
+        <p>
+          Når løsning og pris er avklart,
+          kan delen eller produktet produseres.
+        </p>
 
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- CONTACT -->
+<!-- =========================================================
+     OM ALMA
+     ========================================================= -->
 
-  <section class="contact" id="kontakt">
+<section
+  class="about"
+  id="om"
+>
 
-    <div class="container">
+  <div class="container about-grid">
 
-      <div class="section-title">
-        <h2>Hva kan jeg hjelpe deg med?</h2>
-        <p>
-          Beskriv kort hva du trenger. Bilder, mål, skisser
-          eller en eksisterende del gjør det enklere å vurdere løsningen.
-        </p>
-      </div>
 
-      <div class="contact-layout">
+    <div>
 
-        <div class="contact-info">
+      <span class="about-label">
+        Alma Produksjon og Utleie
+      </span>
 
-          <h3>Alma Produksjon og Utleie</h3>
+      <h2>
+        Praktiske løsninger når
+        standardproduktet ikke passer
+      </h2>
 
-          <p>
-            <strong>Daniel Nystad</strong>
-          </p>
+      <p>
+        Alma Produksjon og Utleie holder til
+        i Rana og tilbyr fleksibel produksjon
+        for privatpersoner og bedrifter.
+      </p>
 
-          <p>
-            Nesnaveien 1174<br>
-            8725 Utskarpen
-          </p>
+      <p>
+        Målet er å gjøre veien fra idé eller
+        problem til fysisk løsning kortere.
+        Oppdrag kan være alt fra én enkelt
+        reservedel til prototyper, merking
+        eller mindre produksjonsserier.
+      </p>
 
-          <p>
-            Telefon:<br>
-            <a href="tel:+4792444665">
-              +47 924 44 665
-            </a>
-          </p>
+      <br>
 
-          <p>
-            E-post:<br>
-            <a href="mailto:daniel.nystad@gmail.com">
-              daniel.nystad@gmail.com
-            </a>
-          </p>
+      <a
+        class="button button-white"
+        href="#kontakt"
+      >
+        Fortell hva du trenger
+      </a>
+
+    </div>
+
+
+    <div class="about-box">
+
+      <h3>
+        Eksempler på hva Alma kan hjelpe med
+      </h3>
+
+      <ul>
+
+        <li>
+          Erstatning av deler som ikke lenger kan kjøpes
+        </li>
+
+        <li>
+          Prototyper og testdeler
+        </li>
+
+        <li>
+          Funksjonelle 3D-printede komponenter
+        </li>
+
+        <li>
+          Braketter, holdere og kapslinger
+        </li>
+
+        <li>
+          Navneskilt og produktmerking
+        </li>
+
+        <li>
+          Lasergravering av logo og tekst
+        </li>
+
+        <li>
+          Fullfarge UV-print
+        </li>
+
+        <li>
+          Oppmåling og redesign av eksisterende deler
+        </li>
+
+        <li>
+          Småserieproduksjon
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     KONTAKT
+     ========================================================= -->
+
+<section
+  class="contact"
+  id="kontakt"
+>
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span class="small-title">
+        Kontakt
+      </span>
+
+      <h2>
+        Hva kan jeg hjelpe deg med?
+      </h2>
+
+      <p>
+        Send en kort beskrivelse av oppdraget.
+        Bilder, mål, tegninger eller 3D-filer
+        gjør det enklere å vurdere løsningen.
+      </p>
+
+    </div>
+
+
+    <div class="contact-layout">
+
+
+      <!-- KONTAKTINFO -->
+
+      <aside class="contact-info">
+
+        <h3>
+          Alma Produksjon og Utleie
+        </h3>
+
+
+        <div class="detail">
+
+          <small>
+            Kontaktperson
+          </small>
+
+          Daniel Nystad
 
         </div>
 
 
-        <div>
+        <div class="detail">
 
-          <!-- FANEVELGER -->
+          <small>
+            Adresse
+          </small>
 
-          <div class="tabs" role="tablist">
+          Nesnaveien 1174<br>
+          8725 Utskarpen
 
-            <button type="button"
-                    class="tab active"
-                    data-service="3D-print">
-              3D-print
-            </button>
+        </div>
 
-            <button type="button"
-                    class="tab"
-                    data-service="Laser / gravering">
-              Laser / gravering
-            </button>
 
-            <button type="button"
-                    class="tab"
-                    data-service="UV-print">
-              UV-print
-            </button>
+        <div class="detail">
 
-            <button type="button"
-                    class="tab"
-                    data-service="Utleie">
-              Utleie
-            </button>
+          <small>
+            Telefon
+          </small>
 
-            <button type="button"
-                    class="tab"
-                    data-service="Produktutvikling / teknisk tegning">
-              Produktutvikling / teknisk tegning
-            </button>
+          <a href="tel:+4792444665">
+            +47 924 44 665
+          </a>
+
+        </div>
+
+
+        <div class="detail">
+
+          <small>
+            E-post
+          </small>
+
+          <a href="mailto:daniel.nystad@gmail.com">
+            daniel.nystad@gmail.com
+          </a>
+
+        </div>
+
+      </aside>
+
+
+      <!-- FORESPØRSEL -->
+
+      <div>
+
+        <div class="request-label">
+          Hva gjelder forespørselen?
+        </div>
+
+
+        <!-- FANEVELGER -->
+
+        <div
+          class="tabs"
+          role="tablist"
+          aria-label="Velg tjeneste"
+        >
+
+          <button
+            type="button"
+            class="tab active"
+            data-service="3D-print"
+          >
+            3D-print
+          </button>
+
+
+          <button
+            type="button"
+            class="tab"
+            data-service="Laser / gravering"
+          >
+            Laser / gravering
+          </button>
+
+
+          <button
+            type="button"
+            class="tab"
+            data-service="UV-print"
+          >
+            UV-print
+          </button>
+
+
+          <button
+            type="button"
+            class="tab"
+            data-service="Utleie av verktøy / utstyr"
+          >
+            Utleie
+          </button>
+
+
+          <button
+            type="button"
+            class="tab"
+            data-service="Produktutvikling / teknisk tegning"
+          >
+            Produktutvikling / tegning
+          </button>
+
+        </div>
+
+
+        <!-- SKJEMA -->
+
+        <form id="contactForm">
+
+          <input
+            type="hidden"
+            id="service"
+            name="service"
+            value="3D-print"
+          >
+
+
+          <div
+            class="selected-service"
+            id="selectedService"
+          >
+            Forespørselen gjelder:
+            <strong>3D-print</strong>
+          </div>
+
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="name">
+                Navn *
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="company">
+                Bedrift
+              </label>
+
+              <input
+                id="company"
+                name="company"
+                type="text"
+              >
+
+            </div>
 
           </div>
 
 
-          <!-- SKJEMA -->
-
-          <!-- Webutvikler kobler dette til ønsket skjematjeneste/backend -->
-
-          <form id="contactForm">
-
-            <input
-              type="hidden"
-              id="service"
-              name="service"
-              value="3D-print"
-            >
-
-            <div class="form-row">
-
-              <div class="form-group">
-                <label for="name">Navn *</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="company">Bedrift</label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                >
-              </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-              <div class="form-group">
-                <label for="email">E-post *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Telefon</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                >
-              </div>
-
-            </div>
-
+          <div class="form-row">
 
             <div class="form-group">
 
-              <label for="message">
-                Beskriv hva du trenger *
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Eksempel: Jeg har en plastdel som har gått i stykker og ønsker å få laget en ny. Jeg har originaldelen og kan sende bilder og mål."
-              ></textarea>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="attachment">
-                Bilder / tegninger / 3D-filer
+              <label for="email">
+                E-post *
               </label>
 
               <input
-                id="attachment"
-                name="attachment"
-                type="file"
-                multiple
-                accept=".jpg,.jpeg,.png,.pdf,.stl,.step,.stp,.3mf,.dxf"
+                id="email"
+                name="email"
+                type="email"
+                required
               >
-
-              <div class="helper-text">
-                Du kan gjerne legge ved bilder, PDF, STL, STEP,
-                3MF eller DXF dersom du har dette tilgjengelig.
-              </div>
 
             </div>
 
 
-            <button class="button" type="submit">
-              Send forespørsel
-            </button>
+            <div class="form-group">
 
-          </form>
+              <label for="phone">
+                Telefon
+              </label>
 
-        </div>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              Beskriv hva du trenger *
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Eksempel: Jeg har en plastdel som har gått i stykker og ønsker å få laget en ny. Jeg har originaldelen og kan sende bilder og mål."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="attachment">
+              Bilder / tegninger / 3D-filer
+            </label>
+
+            <input
+              id="attachment"
+              name="attachment"
+              type="file"
+              multiple
+              accept=".jpg,.jpeg,.png,.pdf,.stl,.step,.stp,.3mf,.dxf"
+            >
+
+            <div class="helper-text">
+              Legg gjerne ved bilder, PDF, STL,
+              STEP, STP, 3MF eller DXF.
+            </div>
+
+          </div>
+
+
+          <button
+            class="button"
+            type="submit"
+          >
+            Send forespørsel
+          </button>
+
+        </form>
 
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
+
 
 </main>
 
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
-  © Alma Produksjon og Utleie V/ Nystad
+
+  <div class="container footer-inner">
+
+    <div>
+      <strong>
+        Alma Produksjon og Utleie V/ Nystad
+      </strong>
+    </div>
+
+    <div>
+      Rana, Nordland
+    </div>
+
+  </div>
+
 </footer>
 
 
-<script>
-  /* FANEVELGER */
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
-  const tabs = document.querySelectorAll(".tab");
-  const serviceInput = document.getElementById("service");
+<script>
+
+  /*
+    ---------------------------------------------------------
+    TJENESTEVELGER
+    ---------------------------------------------------------
+  */
+
+  const tabs =
+    document.querySelectorAll(".tab");
+
+  const serviceInput =
+    document.getElementById("service");
+
+  const selectedService =
+    document.getElementById("selectedService");
+
 
   tabs.forEach(tab => {
 
     tab.addEventListener("click", function () {
 
-      tabs.forEach(item =>
-        item.classList.remove("active")
-      );
+      tabs.forEach(item => {
+        item.classList.remove("active");
+      });
 
       this.classList.add("active");
 
-      serviceInput.value =
+      const service =
         this.dataset.service;
+
+      serviceInput.value =
+        service;
+
+      selectedService.innerHTML =
+        "Forespørselen gjelder: <strong>"
+        + service
+        + "</strong>";
 
     });
 
@@ -791,24 +1844,33 @@
 
 
   /*
-    Dette kontaktskjemaet er kun frontend.
+    ---------------------------------------------------------
+    KONTAKTSKJEMA
 
-    Webutvikler / webtjeneste må koble skjemaet mot
-    ønsket e-post-, API- eller skjemaløsning.
+    GitHub Pages kan ikke sende dette skjemaet direkte.
+
+    Skjemaet må senere kobles mot en skjematjeneste,
+    e-posttjeneste eller annen backend.
+    ---------------------------------------------------------
   */
 
   document
     .getElementById("contactForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener(
+      "submit",
+      function(event) {
 
-      event.preventDefault();
+        event.preventDefault();
 
-      alert(
-        "Skjemaet må kobles til valgt e-post- eller skjematjeneste før publisering."
-      );
+        alert(
+          "Kontaktskjemaet er klart, men må kobles til en skjematjeneste før det kan sende forespørsler."
+        );
 
-    });
+      }
+    );
+
 </script>
+
 
 </body>
 </html>
