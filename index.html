@@ -1842,6 +1842,51 @@
 
 <script>
 
+  
+  /* =========================================================
+     MOBILMENY
+     ========================================================= */
+
+  const menuToggle =
+    document.getElementById("menuToggle");
+
+  const mainNav =
+    document.getElementById("mainNav");
+
+
+  menuToggle.addEventListener("click", function () {
+
+    const menuIsOpen =
+      mainNav.classList.toggle("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      menuIsOpen
+    );
+
+    menuToggle.textContent =
+      menuIsOpen ? "✕" : "☰";
+
+  });
+
+
+  mainNav.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+      mainNav.classList.remove("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.textContent =
+        "☰";
+
+    });
+
+  });
 
   /* =========================================================
      TJENESTEVELGER
