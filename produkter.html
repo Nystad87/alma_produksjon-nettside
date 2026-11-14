@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="no">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Produkter | Alma Produksjon og Utleie</title>
+
+  <style>
+
+    :root {
+      --alma-deep: #072d4b;
+      --alma-blue: #075493;
+      --alma-bright: #0869ae;
+      --alma-light: #eaf4fb;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(255,255,255,0.12),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          var(--alma-deep) 0%,
+          var(--alma-blue) 55%,
+          var(--alma-bright) 100%
+        );
+
+      color: var(--white);
+
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 4%;
+      box-shadow: 0 2px 12px rgba(7,45,75,0.08);
+    }
+
+    .logo img {
+      width: 300px;
+      max-width: 80%;
+      display: block;
+    }
+
+    main {
+      min-height: calc(100vh - 100px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 60px 25px;
+    }
+
+    .content {
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+
+      color: #d7ecfb;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.05;
+
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: #e8f2f8;
+
+      font-size: 19px;
+      line-height: 1.7;
+
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+
+      background: var(--white);
+      color: var(--alma-blue);
+
+      text-decoration: none;
+
+      padding: 14px 24px;
+
+      border-radius: 5px;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: var(--alma-light);
+      color: var(--alma-deep);
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 18px 5%;
+      }
+
+      .logo img {
+        width: 220px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <a class="logo" href="index.html">
+
+    <img
+      src="alma-logo.png"
+      alt="Alma Produksjon og Utleie"
+    >
+
+  </a>
+
+</header>
+
+
+<main>
+
+  <div class="content">
+
+    <span class="label">
+      Alma Produksjon og Utleie
+    </span>
+
+    <h1>
+      Alma Produkter
+    </h1>
+
+    <p>
+      Vi jobber med utvikling av egne produkter
+      og praktiske løsninger for både privatpersoner
+      og bedrifter.
+      <br><br>
+      Denne siden er under utarbeidelse.
+      Mer informasjon kommer snart.
+    </p>
+
+    <a
+      href="index.html"
+      class="button"
+    >
+      Tilbake til forsiden
+    </a>
+
+  </div>
+
+</main>
+
+</body>
+
+</html>
